@@ -37,7 +37,42 @@ let courses = [
     }
 ];
 
-// invoking the function to search for courseId
+console.log ("-------------------------------------------------------------------");
+// Using Array Functions
+//Calling the function - When does the PROG200 course start?
+let courseId = "PROG200";
+let selectedCourse = courses.find(course => course.CourseId == courseId);
+console.log (`Start Date of the Course [ID: ${courseId}] ` + selectedCourse.StartDate);
+console.log ("-------------------------------------------------------------------");
+
+//Calling the function - What is the title of the PROJ500 course?
+courseId = "PROJ500";
+selectedCourse = courses.find(course => course.CourseId == courseId);
+console.log (`Title of the Course [ID: ${courseId}] ` + selectedCourse.Title);
+console.log ("-------------------------------------------------------------------");
+
+//Calling the function - What are the titles of the courses that cost $50 or less?
+fee = 50.00;
+let selectedCourses = courses.filter(course => {return course.Fee <= fee});
+console.log (`Course less than ${fee} are listed below,`);
+len = selectedCourses.length;
+for(let i=0; i<len; i++) {
+    console.log(selectedCourses[i].Title);
+}
+console.log ("-------------------------------------------------------------------");
+
+//Calling the function - What  classes meet in "Classroom 1"?
+location = "Classroom 1";
+selectedCourses = courses.filter(course => {return course.Location === location});
+console.log (`Course conducted at ${location} are listed below,`);
+len = selectedCourses.length;
+for(let i=0; i<len; i++) {
+    console.log(selectedCourses[i].Title);
+}
+console.log ("-------------------------------------------------------------------");
+
+
+/*// invoking the function to search for courseId
 function findCourseStartDate (courseId) {
     let numberOfCourses = courses.length;
     for (let i = 0; i < numberOfCourses; i++) {
@@ -85,7 +120,7 @@ function filterCoursesByLocation (classroom) {
 }
 
 //Calling the function - When does the PROG200 course start?
-let courseId = "PROG200";
+courseId = "PROG200";
 console.log (`Start Date of the Course [ID: ${courseId}] ` + findCourseStartDate (courseId));
 
 //Calling the function - What is the title of the PROJ500 course?
@@ -98,4 +133,4 @@ console.log (`Course less than ${fee} are ` + filterCoursesLessThanFee (fee));
 
 //Calling the function - What  classes meet in "Classroom 1"?
 location = "Classroom 1";
-console.log (`Course conducted at location ${location} are ` + filterCoursesByLocation (location));
+console.log (`Course conducted at location ${location} are ` + filterCoursesByLocation (location));*/
