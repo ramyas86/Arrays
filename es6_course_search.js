@@ -54,7 +54,7 @@ console.log ("------------------------------------------------------------------
 //Calling the function - What are the titles of the courses that cost $50 or less?
 fee = 50.00;
 let selectedCourses = courses.filter(course => {return course.Fee <= fee});
-console.log (`Course less than ${fee} are listed below,`);
+console.log (`Courses less than ${fee} are listed below,`);
 len = selectedCourses.length;
 for(let i=0; i<len; i++) {
     console.log(selectedCourses[i].Title);

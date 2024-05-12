@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/es6_course_search.js"
+            "program": "${workspaceFolder}/actors.js"
         }
     ]
 }
