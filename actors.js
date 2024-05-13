@@ -47,8 +47,8 @@ console.log ("------------------------------------------------------------------
 
 // Who has a name that starts with "Bob"?
 
-const str1 = 'Bob';
-let result = famousActors.filter(actor => {return actor.name.startsWith(str1)});
+const str1 = 'bob';
+let result = famousActors.filter(actor => {return actor.name.toLowerCase().startsWith(str1.toLowerCase())});
 len = result.length;
 console.log(`Film names that starts with Bob are`);
 for(let i=0; i<len; i++) {
@@ -59,18 +59,22 @@ console.log ("------------------------------------------------------------------
 
 //Which actors have been in a film that starts with "A" 
 
-const str2 = 'A';
-let result1 = famousActors.filter(actor => {return (actor.films.filter(film => {return film.startsWith(str2)})).length>0});
+const str2 = 'a';
+
+let result1 = famousActors.filter(actor => {return (actor.films.filter(film => {return film.toLowerCase().startsWith(str2)})).length>0});
 len = result1.length;
+
 for(let i=0; i<len; i++) {
+    result[i].name = result[i].name;
     console.log(`Actors/Actor have been in a film that starts with "A" are/is ${result1[i].name}`);
 }
 console.log ("-------------------------------------------------------------------");
 
 /*
+const str3 = 'A';
 for (let k=0; k<famousActors.length; k++) {
     let actor = famousActors[k];
-    let res1 = actor.films.filter(film => {return film.startsWith(str2)});
+    let res1 = actor.films.filter(film => {return film.startsWith(str3)});
     console.log(`name: ${actor.name}, number of films: ${res1.length}`);
 }
 */
